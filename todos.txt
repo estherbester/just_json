@@ -1,0 +1,13 @@
+Functions:
+
+- fetch feed (celery/rabbitmq? or just cron?)
+
+- parse feed (json and xml formats)
+
+- sync feed data with parsed data objects
+
+- view to pass dict of objects to templates (params: max number of entries, feed by name)
+
+- template modules to loop through entries with CSS hooks for easy styling
+
+- template tags for displaying common media (youtube videos, flickr images, yfrog/twitpic/etc images...maybe not needed)

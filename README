@@ -1,14 +1,20 @@
-version 0.1 (10/26/2010)
+version 0.2 (11/19/2010)
 Esther Nam
 
-This is a Django app that grabs JSON feeds from various services --
-scripts.py will grab the JSON feed of a given service, parse it as best it can, and save each posted item as an Entry -- dumping all the JSON comprising that entry into a single field as a string.
+This is a Django app that grabs JSON and XML feeds from various services --
+script.py will grab the feed of a given service, parse it as best it can, and save each posted item as an Entry -- dumping all the data comprising that entry into a single field as a string.  
+
+DEPENDENCIES:
+- Django 1.2+
+- json module
+- feedparser module
+
 
 TO INSTALL:
 Just drop the folder into a Django project, add it to your settings.INSTALLED_APPS, and run "./manage.py syncdb"
 
 TO SYNC:
-In scripts.py, modify the ServiceFeed instantiation to whatever service you want to run.
+In script.py, modify the ServiceFeed instantiation to whatever service you want to run.
 
 As of right now, it can read Flickr, Twitter, and YouTube feeds. 
 
