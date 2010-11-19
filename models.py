@@ -9,6 +9,8 @@ SERVICES = (
 ('twitter', "Twitter"),
 ('youtube', "YouTube"),
 ('tumblr', "Tumblr"),
+('greader', "Greader"),
+('mefi', "MetaFilter"),
 )
 
 #probably don't need to use this model too often, once you've got the core services entered that you plan to stream
@@ -26,11 +28,12 @@ class Entry(models.Model):
     service_identifier= models.CharField(max_length=200)
     service = models.ForeignKey(Service)
     entry_date = models.DateTimeField(default=datetime.now)
+    date_added = models.DateTimeField(default=datetime.now)
     raw_json = models.TextField(blank=True)
     
     def __unicode__(self):
       service = Service.objects.get(service=self.service)
-      return str(self.id)+' -- (' +str(service)+')'
+      return str(self.id)+' -- (' +str(self.service)+')'
     class Meta: 
       verbose_name_plural = "Entries"
 	
